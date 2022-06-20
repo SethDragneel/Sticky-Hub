@@ -61,6 +61,22 @@ game:GetService("ReplicatedStorage").RemoteEvents.SkillAttack:FireServer(unpack(
    wait(.5)
    end
 end)
+
+page:Toggle('Auto DrawRole',false,function(AutoEGG)
+    _G.AutoEGG = AutoEGG
+    while _G.AutoEGG do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.78602600097656, 39.133487701416016, -458.41717529296875)
+local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.DrawRole:FireServer(unpack(args))
+
+
+wait(.5)
+end        
+end)
+
 Mob = {}
 for i,v in pairs(game:GetService("Workspace").GhostPos:GetChildren()) do
     table.insert(Mob,v.Name) 
@@ -71,4 +87,18 @@ end)
 
 page:Toggle('Auto Farm',false,function()
     
+end)
+
+local page2 = Tab:page()
+local Labelz = page2:Label('Extra')
+page2:Button('TP to Boss',function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(442.81488037109375, 38.937828063964844, 754.1795043945312)
+end)
+
+page2:Button('TP to Spawn',function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(19.71022605895996, 35.4687385559082, -500.7724609375)
+end)
+
+page2:Button('TP to DrawRole',function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.78602600097656, 39.133487701416016, -458.41717529296875)
 end)
