@@ -1,3 +1,6 @@
+game:GetService("Workspace").GhostPos.SpawnPosCtrl:Destroy()
+game:GetService("Workspace").GhostPos.GhostCount:Destroy()
+
 local SimpleShindoUi = loadstring(game:HttpGet("https://raw.githubusercontent.com/naypramx/Ui__Project/Script/SimpleShindoUi"))()
 
 local Main = SimpleShindoUi:new()
@@ -82,7 +85,7 @@ for i,v in pairs(game:GetService("Workspace").GhostPos:GetChildren()) do
     table.insert(Mob,v.Name) 
 end
 local drope = page:drop('Select Mob',"None",false,Mob,function(SMOB)
-    PlayerTP = SMOB
+    
 end)
 
 page:Toggle('Auto Farm',false,function()
