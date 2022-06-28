@@ -106,5 +106,16 @@ page2:Button('TP to DrawRole',function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.78602600097656, 39.133487701416016, -458.41717529296875)
 end)
 
-game:GetService("Workspace").GhostPos.SpawnPosCtrl:Destroy()
-game:GetService("Workspace").GhostPos.GhostCount:Destroy()
+page2:Button('Auto Chest',function()
+     task.wait(0.1)
+            pcall(function()
+                for i, v in pairs(game:GetService("Workspace").ChestPoints:GetDescendants()) do
+                    if v:IsA("TouchTransmitter") then
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) -- 0 is touch
+                        task.wait()
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+                    end
+                end
+            end)
+    Enabled = false
+end)
